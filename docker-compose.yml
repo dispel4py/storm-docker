@@ -4,7 +4,7 @@ zookeeper:
     - "49181:2181"
     - "22"
 nimbus:
-  image: wurstmeister/storm-nimbus
+  image: dispel4py/storm-nimbus
   ports:
     - "49773:3773"
     - "49772:3772"
@@ -13,7 +13,7 @@ nimbus:
   links: 
     - zookeeper:zk
 supervisor:
-  image: wurstmeister/storm-supervisor
+  image: dispel4py/storm-supervisor
   ports:
     - "8000"
     - "22"
@@ -21,7 +21,7 @@ supervisor:
     - nimbus:nimbus
     - zookeeper:zk
 ui:
-  image: wurstmeister/storm-ui
+  image: dispel4py/storm-ui
   ports:
     - "49080:8080"
     - "22"
